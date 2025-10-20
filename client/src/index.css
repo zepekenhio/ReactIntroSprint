@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css?family=Francois+One|PT+Serif:400,400i,700,700i");
+
+body {
+  font-family: "PT Serif", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #2c3e50;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2em;
+  color: #e74c3c;
+}
+
+.pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px 10%;
+  justify-items: center;
+}
+
+.pokemon-list-item {
+  list-style: none;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 180px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.pokemon-list-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.pokemon-list-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.pokemon-list-item p {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #34495e;
+}
+
+@media (max-width: 600px) {
+  .pokemon-list {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .pokemon-list-item {
+    width: 140px;
+    padding: 15px;
+  }
+
+  .pokemon-list-item img {
+    width: 100px;
+    height: 100px;
+  }
+}
