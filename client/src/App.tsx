@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-
+import React from "react";
 import "./index.css"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Pokedex from "./components/Pokedex";
+import Pokedetails from "./components/Pokedetails";
+import NewPokemon from "./components/NewPokemon";
+import UpdatePokemon from "./components/UpdatePokemon";
+
 const App: React.FC = () => {
-  const [view, setView] = useState("pokedex");
- 
-
-  const handleInterface = (view) => {
-    setView(view);
-  };
-
-
 
   return (
-    <div>
-
-      {view === "pokedex" }
-      {view === "details" }
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Pokedex />} />
+        <Route path="/pokemon/:id" element={<Pokedetails />} />
+        <Route path="/new-pokemon" element={<NewPokemon />} />
+        <Route path="/update-pokemon/:id" element={<UpdatePokemon />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
